@@ -52,7 +52,7 @@
       "principalId": "BoardMember",
       "permission": "ALLOW",
       "method": "patch"
-    }   
+    }
   ],
   "methods": {}
 }

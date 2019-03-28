@@ -37,6 +37,12 @@
       }
     }
   },
-  "acls": [],
+  "acls": [{
+    "accessType": "*",
+    "principalType": "ROLE",
+    "principalId": "$authenticated",
+    "permission": "ALLOW",
+    "method": "*"
+  }],
   "methods": {}
 }
