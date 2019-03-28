@@ -1,0 +1,35 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "mongods": {
+    "host": "ds213896.mlab.com",
+    "port": 13896,
+    "url": "mongodb://tushar:tushar123@ds213896.mlab.com:13896/trello",
+    "database": "trello",
+    "password": "tushar123",
+    "name": "mongods",
+    "user": "tushar",
+    "connector": "mongodb"
+  },
+  "Sendinblue": {
+    "name": "Sendinblue",
+    "connector": "mail",
+    "transports": [
+      {
+        "type": "smtp",
+        "host": "smtp-relay.sendinblue.com",
+        "secure": false,
+        "port": 587,
+        "tls": {
+          "rejectUnauthorized": false
+        },
+        "auth": {
+          "user": "tushar.nikam@globant.com",
+          "pass": "vTUyMOAtChbIdNWx"
+        }
+      }
+    ]
+  }
+}

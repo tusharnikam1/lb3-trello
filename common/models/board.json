@@ -1,0 +1,58 @@
+{
+  "name": "board",
+  "plural": "boards",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "visibility": {
+      "type": "string",
+      "required": true,
+      "default": "private"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "lists": {
+      "type": "hasMany",
+      "model": "list",
+      "foreignKey": "boardId",
+      "options": {
+        "nestRemoting": true,
+        "disableInclude": true
+      }
+    },
+    "members": {
+      "type": "hasMany",
+      "model": "user",
+      "foreignKey": "boardId",
+      "options": {
+        "nestRemoting": true
+      },
+      "through": "boardMember"
+    }
+  },
+  "acls": [    
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "method": "*"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "BoardMember",
+      "permission": "ALLOW",
+      "method": "patch"
+    }   
+  ],
+  "methods": {}
+}
